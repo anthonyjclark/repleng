@@ -27,5 +27,6 @@
     "typescript-eslint"               : "^8.55.1-alpha.4",
     "vite"                            : "^8.0.0-beta.13"
   },
-  "overrides"      : {"vite": "^8.0.0-beta.13"}
+  "overrides"      : {"vite": "^8.0.0-beta.13"},
+  "dependencies"   : {"prism-code-editor": "^5.0.1"}
 }
