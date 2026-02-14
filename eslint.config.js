@@ -6,12 +6,6 @@ import simpleImportSort from 'eslint-plugin-simple-import-sort';
 import globals from 'globals';
 import tseslint from 'typescript-eslint';
 
-// import parser from '@typescript-eslint/parser';
-//     languageOptions: {
-//       parser: parser,
-//       parserOptions: { project: true },
-//     },
-
 export default defineConfig(
 	eslint.configs.recommended,
 	tseslint.configs.strictTypeChecked,
