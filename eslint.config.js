@@ -1,23 +1,32 @@
+import globals from 'globals';
+
+import js from '@eslint/js';
+import eslint from '@eslint/js';
+import { defineConfig } from 'eslint/config';
+
+import tseslint from 'typescript-eslint';
+
 import stylistic from '@stylistic/eslint-plugin';
 
-// import globals from 'globals';
 // import parser from '@typescript-eslint/parser';
-
-// TODO: figure out https://typescript-eslint.io/getting-started/typed-linting/
-
-// export default [
-//   {
 //     languageOptions: {
 //       parser: parser,
 //       parserOptions: { project: true },
-//       globals: globals.browser
 //     },
-//     files: [ '**/*.ts' ],
 
-export default [
+// TODO: style settings to setup
+// - sort imports
+
+export default defineConfig(
+	eslint.configs.recommended,
+	// tseslint.configs.strictTypeChecked,
+	// tseslint.configs.stylisticTypeChecked,
 	{
-		plugins: {
-			'@stylistic': stylistic,
+		files: [ '**/*.{js,mjs,cjs,ts,mts,cts}' ],
+		plugins: { js, '@stylistic': stylistic },
+		languageOptions: {
+			globals: globals.browser,
+			// parserOptions: { projectService: true },
 		},
 		rules: {
 			'@stylistic/array-bracket-spacing': [ 'error', 'always', { 'singleValue': true, 'arraysInArrays': false } ],
@@ -51,7 +60,7 @@ export default [
 			'@stylistic/padded-blocks': [ 'error', { 'blocks': 'always', 'switches': 'always', 'classes': 'always' } ],
 			'@stylistic/padding-line-between-statements': [ 'error', { 'blankLine': 'always', 'prev': 'block-like', 'next': '*' } ],
 			'@stylistic/quote-props': [ 'error', 'consistent' ],
-			'@stylistic/quotes': [ 'error', 'single', { 'allowTemplateLiterals': true, 'avoidEscape': false } ],
+			'@stylistic/quotes': [ 'error', 'single', { 'allowTemplateLiterals': 'always', 'avoidEscape': false } ],
 			'@stylistic/rest-spread-spacing': [ 'error', 'never' ],
 			'@stylistic/semi': [ 'error', 'always', { 'omitLastInOneLineBlock': true } ],
 			'@stylistic/semi-spacing': [ 'error', { 'after': true, 'before': false } ],
@@ -69,4 +78,4 @@ export default [
 			'@stylistic/wrap-iife': [ 'error', 'any', { 'functionPrototypeMethods': true } ],
 			'@stylistic/yield-star-spacing': [ 'error', 'both' ] },
 	},
-];
+);
