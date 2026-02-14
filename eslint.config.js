@@ -12,9 +12,6 @@ import tseslint from 'typescript-eslint';
 //       parserOptions: { project: true },
 //     },
 
-// TODO: style settings to setup
-// - sort imports
-
 export default defineConfig(
 	eslint.configs.recommended,
 	tseslint.configs.strictTypeChecked,

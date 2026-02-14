@@ -19,12 +19,13 @@
     "delete:all" : "npm run delete:dist && npm run delete:node"
   },
   "devDependencies": {
-    "@eslint/js"              : "^10.0.1",
-    "@stylistic/eslint-plugin": "^5.8.0",
-    "eslint"                  : "^10.0.0",
-    "globals"                 : "^17.3.0",
-    "typescript-eslint"       : "^8.55.1-alpha.4",
-    "vite"                    : "^8.0.0-beta.13"
+    "@eslint/js"                      : "^10.0.1",
+    "@stylistic/eslint-plugin"        : "^5.8.0",
+    "eslint"                          : "^10.0.0",
+    "eslint-plugin-simple-import-sort": "^12.1.1",
+    "globals"                         : "^17.3.0",
+    "typescript-eslint"               : "^8.55.1-alpha.4",
+    "vite"                            : "^8.0.0-beta.13"
   },
   "overrides"      : {"vite": "^8.0.0-beta.13"}
 }

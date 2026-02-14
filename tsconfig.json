@@ -1,12 +1,18 @@
 {
+  "files": ["eslint.config.js"],
   "include": ["src/**/*.ts", "lib/**/*.ts"],
-  "exclude": ["**/*.spec.ts","eslint.config.mjs", "vite.config.mjs"],
+  // "exclude": ["**/*.spec.ts","eslint.config.mjs", "vite.config.mjs"],
+  "exclude": ["**/*.spec.ts"],
 
   "compilerOptions": {
     "outDir": "./dist",
 
+    // Other Outputs
+    "sourceMap": true,
+    "declaration": true,
+    "declarationMap": true,
+
     // Environment Settings
-    // See also https://aka.ms/tsconfig/module
     "target": "esnext",
     "useDefineForClassFields": true,
     "module": "esnext",
@@ -20,13 +26,9 @@
     "verbatimModuleSyntax": true,
     "moduleDetection": "force",
     "noEmit": true,
+    "isolatedModules": true,
+    "noUncheckedSideEffectImports": true,
     // "resolveJsonModule": true,
-    // "isolatedModules": true,
-
-    // Other Outputs
-    "sourceMap": true,
-    "declaration": true,
-    "declarationMap": true,
 
     // Stricter Typechecking Options
     "noUncheckedIndexedAccess": true,
@@ -40,12 +42,6 @@
     "noUnusedParameters": true,
     "erasableSyntaxOnly": true,
     "noFallthroughCasesInSwitch": true,
-    "noPropertyAccessFromIndexSignature": true,
-
-    // Recommended Options
-    "verbatimModuleSyntax": true,
-    "isolatedModules": true,
-    "noUncheckedSideEffectImports": true,
-    "moduleDetection": "force",
+    "noPropertyAccessFromIndexSignature": true
   }
 }
