@@ -1,9 +1,10 @@
-export type TokenTag = 'indent'
-										| 'dedent'
-										| 'newline'
-										| 'number'
-										| 'identifier'
-										| 'operator';
+export type TokenTag
+	= 'indent'
+	| 'dedent'
+	| 'newline'
+	| 'number'
+	| 'identifier'
+	| 'operator';
 
 export interface Token {
 	start: number;
