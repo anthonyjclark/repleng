@@ -18,6 +18,7 @@ export default defineConfig(
 			parserOptions: { projectService: true },
 		},
 		rules: {
+			'@typescript-eslint/restrict-template-expressions': [ 'error', { 'allowNumber': true, 'allowBoolean': true } ],
 			'simple-import-sort/imports': 'error',
 			'simple-import-sort/exports': 'error',
 			'@stylistic/array-bracket-spacing': [ 'error', 'always', { 'singleValue': true, 'arraysInArrays': false } ],

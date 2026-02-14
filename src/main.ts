@@ -1,54 +1,35 @@
-// Importing Prism grammars
-import 'prism-code-editor/prism/languages/markup';
+import './style.css';
+import 'prism-code-editor/prism/languages/clike';
 
 import { basicEditor } from 'prism-code-editor/setups';
 
-const editor = basicEditor(
-	'#editor',
-	{
-		language: 'html',
-		theme: 'github-dark',
-	},
-	() => {
+import { debounce } from '../lib/utilities';
 
-		console.log( 'mounted' );
+function editorUpdate( code: string ) {
 
-	},
-);
+	console.log( 'Editor updated:', code );
 
-// import './style.css'
-// import { setupCounter } from './counter.ts'
+}
 
-// document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
-//   <div>
-//     <h1>Vite + TypeScript</h1>
-//     <div class="card">
-//       <button id="counter" type="button"></button>
-//     </div>
-//     <p class="read-the-docs">
-//       Click on the Vite and TypeScript logos to learn more
-//     </p>
-//   </div>
-// `
+function editorLoaded() {
 
-// setupCounter(document.querySelector<HTMLButtonElement>('#counter')!)
+	console.log( 'Editor loaded' );
 
-// counter.ts
-// export function setupCounter( element: HTMLButtonElement ) {
+}
 
-// 	let counter = 0;
-// 	const setCounter = ( count: number ) => {
+const editorConfig = {
+	theme: 'github-dark',
+	language: 'clike',
+	tabSize: 2,
+	insertSpaces: false,
+	lineNumbers: true,
+	readOnly: false,
+	wordWrap: false,
+	value: 'x = 1',
+	onUpdate: debounce( editorUpdate, 300 ),
+	// onSelectionChange: Function called when the editor’s selection changes.
+	// onTokenize: Function called before the tokens are stringified to HTML.
+};
 
-// 		counter = count;
-// 		element.innerHTML = `count is ${counter}`;
-
-// 	};
-
-// 	element.addEventListener( 'click', () => {
-
-// 		setCounter( counter + 1 );
-
-// 	} );
-// 	setCounter( 0 );
-
-// }
+// const editor =
+basicEditor( '#editor', editorConfig, editorLoaded );
