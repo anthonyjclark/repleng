@@ -1,0 +1,15 @@
+{
+  "name"           : "repleng",
+  "description"    : "REPL for engineering problems",
+  "version"        : "1.0.0",
+  "author"         : "Anthony J. Clark",
+  "license"        : "ISC",
+  "type"           : "module",
+  "main"           : "dist/index.js",
+  "keywords"       : ["repl", "notebook", "programming language", "units", "tensor"],
+  "homepage"       : "https://github.com/anthonyjclark/repleng#readme",
+  "repository"     : {"type": "git", "url": "git+https://github.com/anthonyjclark/repleng.git"},
+  "bugs"           : {"url": "https://github.com/anthonyjclark/repleng/issues"},
+  "scripts"        : {"test": "echo \"Error: no test specified\" && exit 1"},
+  "devDependencies": {"@stylistic/eslint-plugin": "^5.8.0"}
+}
