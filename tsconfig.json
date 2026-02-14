@@ -1,8 +1,7 @@
 {
   "files": ["eslint.config.js"],
   "include": ["src/**/*.ts", "lib/**/*.ts"],
-  // "exclude": ["**/*.spec.ts","eslint.config.mjs", "vite.config.mjs"],
-  "exclude": ["**/*.spec.ts"],
+  "exclude": [],
 
   "compilerOptions": {
     "outDir": "./dist",
@@ -17,7 +16,7 @@
     "useDefineForClassFields": true,
     "module": "esnext",
     "lib": ["ES2022", "DOM", "DOM.Iterable"],
-    "types": ["vite/client"],
+    "types": ["vite/client", "vitest/globals"],
     "skipLibCheck": true,
 
     // Bundler mode, Vite handles bundling
