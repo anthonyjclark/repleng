@@ -1,12 +1,10 @@
-import globals from 'globals';
-
 import js from '@eslint/js';
 import eslint from '@eslint/js';
-import { defineConfig } from 'eslint/config';
-
-import tseslint from 'typescript-eslint';
-
 import stylistic from '@stylistic/eslint-plugin';
+import { defineConfig } from 'eslint/config';
+import simpleImportSort from 'eslint-plugin-simple-import-sort';
+import globals from 'globals';
+import tseslint from 'typescript-eslint';
 
 // import parser from '@typescript-eslint/parser';
 //     languageOptions: {
@@ -19,16 +17,18 @@ import stylistic from '@stylistic/eslint-plugin';
 
 export default defineConfig(
 	eslint.configs.recommended,
-	// tseslint.configs.strictTypeChecked,
-	// tseslint.configs.stylisticTypeChecked,
+	tseslint.configs.strictTypeChecked,
+	tseslint.configs.stylisticTypeChecked,
 	{
 		files: [ '**/*.{js,mjs,cjs,ts,mts,cts}' ],
-		plugins: { js, '@stylistic': stylistic },
+		plugins: { js, '@stylistic': stylistic, 'simple-import-sort': simpleImportSort },
 		languageOptions: {
 			globals: globals.browser,
-			// parserOptions: { projectService: true },
+			parserOptions: { projectService: true },
 		},
 		rules: {
+			'simple-import-sort/imports': 'error',
+			'simple-import-sort/exports': 'error',
 			'@stylistic/array-bracket-spacing': [ 'error', 'always', { 'singleValue': true, 'arraysInArrays': false } ],
 			'@stylistic/arrow-parens': [ 'error', 'as-needed', { 'requireForBlockBody': true } ],
 			'@stylistic/arrow-spacing': [ 'error', { 'after': true, 'before': true } ],
