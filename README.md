@@ -23,8 +23,21 @@ npx tsc --init
 ```bash
 npm install
 npm run dev
+npm run test
+npm run build
 ```
 
+## Syntax
+
+```repleng
+x = 1
+mutate x += 1
+x = [1 2; 3 4]
+y = [1 2 3 4; 5 6 7 8]
+z = x @ y
+```
+
+## Scratch
 
 ```typescript
 // vite.config.ts from a different project
